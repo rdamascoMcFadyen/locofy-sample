@@ -6,8 +6,8 @@ import {
   useLocation,
 } from "react-router-dom";
 import Homepage from "./pages/Homepage";
-import HotelsPage from "./pages/HotelsPage";
 import ResultsPage from "./pages/ResultsPage";
+import HotelsPage from "./pages/HotelsPage";
 
 function App() {
   const action = useNavigationType();
@@ -29,11 +29,11 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/hotels-page":
+      case "/results-page":
         title = "";
         metaDescription = "";
         break;
-      case "/results-page":
+      case "/hotels-page":
         title = "";
         metaDescription = "";
         break;
@@ -56,8 +56,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
-      <Route path="/hotels-page" element={<HotelsPage />} />
       <Route path="/results-page" element={<ResultsPage />} />
+      <Route path="/hotels-page" element={<HotelsPage />} />
     </Routes>
   );
 }

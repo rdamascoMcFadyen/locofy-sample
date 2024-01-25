@@ -12,6 +12,8 @@ import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import MatterhornPopup from "../components/MatterhornPopup";
 import PortalPopup from "../components/PortalPopup";
+import Logo from "../components/Logo";
+import NavigationItems from "../components/NavigationItems";
 import { useNavigate } from "react-router-dom";
 
 const Homepage: FunctionComponent = () => {
@@ -22,14 +24,6 @@ const Homepage: FunctionComponent = () => {
   const [isMatterhornPopupOpen, setMatterhornPopupOpen] = useState(false);
   const [isMatterhornPopup1Open, setMatterhornPopup1Open] = useState(false);
   const navigate = useNavigate();
-
-  const onSearchTextClick = useCallback(() => {
-    navigate("/results-page");
-  }, [navigate]);
-
-  const onHotelsTextClick = useCallback(() => {
-    navigate("/hotels-page");
-  }, [navigate]);
 
   const onSearchFlightsButtonClick = useCallback(() => {
     navigate("/results-page");
@@ -64,54 +58,10 @@ const Homepage: FunctionComponent = () => {
       <>
         <div className="relative bg-white w-full overflow-hidden flex flex-col items-center justify-start gap-[69px] text-center text-lg text-white font-roboto hover:[background:linear-gradient(#fff,_#fff),_#87550a] sm:w-full sm:hover:bg-orange-200">
           <div className="self-stretch flex flex-col items-center justify-start text-42xl font-baloo-bhai">
-            <header className="self-stretch bg-white h-[77px] flex flex-row items-center justify-center py-[22px] px-20 box-border sticky w-full top-[0] [background:white] text-left text-sm text-darkslategray-200 font-roboto lg:pl-10 lg:pr-10 lg:box-border md:pl-6 md:pr-6 md:box-border">
+            <header className="self-stretch bg-white h-[77px] flex flex-row items-center justify-center py-[22px] px-20 box-border sticky w-full top-[0] [background:white] lg:pl-10 lg:pr-10 lg:box-border md:pl-6 md:pr-6 md:box-border">
               <div className="flex-1 flex flex-row items-center justify-between">
-                <button className="cursor-pointer [border:none] p-0 bg-[transparent] relative w-[174px] h-[33px] overflow-hidden">
-                  <img
-                    className="absolute h-[96.97%] w-[99.82%] top-[1.59%] right-[0.18%] bottom-[1.44%] left-[0%] max-w-full overflow-hidden max-h-full"
-                    alt=""
-                    src="/symbols.svg"
-                  />
-                </button>
-                <div className="flex flex-row items-center justify-end gap-[36px] sm:flex">
-                  <div className="flex flex-row items-center justify-end gap-[30px] md:hidden">
-                    <button className="cursor-pointer [border:none] p-0 bg-[transparent] relative text-sm font-roboto text-cornflowerblue-200 text-left inline-block">
-                      Explore
-                    </button>
-                    <div
-                      className="relative cursor-pointer"
-                      onClick={onSearchTextClick}
-                    >
-                      Search
-                    </div>
-                    <div
-                      className="relative cursor-pointer"
-                      onClick={onHotelsTextClick}
-                    >
-                      Hotels
-                    </div>
-                    <button className="cursor-pointer [border:none] p-0 bg-[transparent] relative text-sm font-roboto text-darkslategray-200 text-left inline-block">
-                      Offers
-                    </button>
-                  </div>
-                  <div className="flex flex-row items-center justify-center gap-[12px]">
-                    <img
-                      className="relative w-6 h-6 overflow-hidden hidden md:flex"
-                      alt=""
-                      src="/notification.svg"
-                    />
-                    <img
-                      className="relative w-6 h-6 overflow-hidden"
-                      alt=""
-                      src="/notification1.svg"
-                    />
-                    <img
-                      className="rounded-19xl w-9 h-9 object-cover"
-                      alt=""
-                      src="/top_avatar@2x.png"
-                    />
-                  </div>
-                </div>
+                <Logo />
+                <NavigationItems />
               </div>
             </header>
             <div className="self-stretch relative h-[640px]">
