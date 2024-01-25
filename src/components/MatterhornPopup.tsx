@@ -1,5 +1,4 @@
 import { FunctionComponent } from "react";
-import styles from "./MatterhornPopup.module.css";
 
 type MatterhornPopupType = {
   onClose?: () => void;
@@ -9,9 +8,9 @@ const MatterhornPopup: FunctionComponent<MatterhornPopupType> = ({
   onClose,
 }) => {
   return (
-    <div className={styles.matterhornPopup}>
+    <div className="relative rounded-lg bg-white w-[900px] flex flex-col items-start justify-start p-5 box-border max-w-full max-h-full overflow-auto sm:p-2.5 sm:box-border">
       <iframe
-        className={styles.video}
+        className="self-stretch relative h-[560px] sm:h-[50.625vw!important]"
         src={`https://www.youtube.com/embed/DJImX19wyLY?rel=0&autoplay=1&mute=1`}
         frameBorder="0"
         allowFullScreen
